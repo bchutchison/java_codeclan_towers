@@ -29,6 +29,7 @@ public class BedroomTest {
         bedroom.addGuest(guest1);
         assertEquals(1, bedroom.guestCount());
     }
+
     @Test
     public void doesNotAddGuest() {
         bedroom.addGuest(guest1);
