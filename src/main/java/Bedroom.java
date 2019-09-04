@@ -23,10 +23,6 @@ public class Bedroom {
         return roomNumber;
     }
 
-    public double getRatePerNight() {
-        return ratePerNight;
-    }
-
     public int getCapacity() {
         return capacity;
     }
@@ -66,5 +62,9 @@ public class Bedroom {
     public boolean setToOccupied() {
         return this.occupied = true;
 
+    }
+
+    public double getRatePerNight() {
+        return ratePerNight;
     }
 }
