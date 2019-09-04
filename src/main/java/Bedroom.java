@@ -7,14 +7,16 @@ public class Bedroom {
     private String type;
     private boolean occupied;
     private ArrayList<Guest> bedroomGuests;
+    private double ratePerNight;
 
 
-    public Bedroom(int roomNumber, int capacity, String type, boolean occupied) {
+    public Bedroom(int roomNumber, int capacity, String type, boolean occupied, double ratePerNight) {
         this.roomNumber = roomNumber;
         this.capacity = capacity;
         this.type = type;
         this.occupied = occupied;
         this.bedroomGuests = new ArrayList<Guest>();
+        this.ratePerNight = ratePerNight;
     }
 
     public int getRoomNumber() {

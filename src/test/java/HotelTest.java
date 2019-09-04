@@ -21,9 +21,9 @@ public class HotelTest {
     @Before
     public void setUp() {
         hotel = new Hotel(10, 2);
-        bedroom1 = new Bedroom(1, 2, "double", false);
-        bedroom2 = new Bedroom(2, 1, "single", false);
-        bedroom3 = new Bedroom(3, 2, "double", false);
+        bedroom1 = new Bedroom(1, 2, "double", false, 20.00);
+        bedroom2 = new Bedroom(2, 1, "single", false, 50.00);
+        bedroom3 = new Bedroom(3, 2, "double", false, 90.00);
         conferenceRoom1 = new ConferenceRoom(5, "The Mars Suite");
         conferenceRoom2 = new ConferenceRoom(9, "The Jupiter Suite");
         guest1 = new Guest("Ben", 2);
@@ -68,6 +68,17 @@ public class HotelTest {
     public void checkinChangesOccupied() {
         Hotel.checkInGuestToBedroom(guest1, bedroom1);
         assertEquals(true, bedroom1.setToOccupied() );
+    }
+
+    @Test
+    public void bookRoom() {
+        Booking booking = hotel.bookRoom(4, bedroom1);
+        assertEquals(4, booking.getNumOfNights());
+    }
+
+    @Test
+    public void calculateTotalBillForBooking() {
+        
     }
 
 }

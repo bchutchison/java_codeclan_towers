@@ -4,13 +4,16 @@ public class Hotel {
 
     private int totalBedrooms;
     private int totalConferenceRooms;
+
     private ArrayList<Bedroom> bedroomArrayList;
     private ArrayList<ConferenceRoom> conferenceRoomArrayList;
+    private ArrayList<Booking> bookingArrayList;
 
 
     public Hotel(int totalBedrooms, int totalConferenceRooms) {
         this.totalBedrooms = totalBedrooms;
         this.totalConferenceRooms = totalConferenceRooms;
+        this.bookingArrayList = new ArrayList<Booking>();
     }
 
     public static void checkInGuestToBedroom(Guest guest, Bedroom bedroom) {
@@ -29,6 +32,16 @@ public class Hotel {
     public static void checkOutGuestFromBedroom(Bedroom bedroom) {
         bedroom.removeGuest();
     }
+
+    public Booking bookRoom(int numOfNights, Bedroom bedroom) {
+        //return Booking object
+        Booking booking = new Booking(numOfNights, bedroom);
+        bookingArrayList.add(booking);
+        return booking;
+    }
+
+
+
 }
 
 
