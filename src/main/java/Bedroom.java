@@ -40,4 +40,12 @@ public class Bedroom {
         this.type = type;
     }
 
+    public void addGuest(Guest guest) {
+        if(this.capacity > this.bedroomGuests.size())
+        this.bedroomGuests.add(guest);
+    }
+
+    public int guestCount() {
+        return bedroomGuests.size();
+    }
 }
