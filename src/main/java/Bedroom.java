@@ -23,6 +23,10 @@ public class Bedroom {
         return roomNumber;
     }
 
+    public double getRatePerNight() {
+        return ratePerNight;
+    }
+
     public int getCapacity() {
         return capacity;
     }

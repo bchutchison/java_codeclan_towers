@@ -16,6 +16,8 @@ public class Booking {
         this.numOfNights = numOfNights;
     }
 
-
+    public Bedroom getBedroom() {
+        return bedroom;
+    }
 
 }

@@ -17,6 +17,7 @@ public class HotelTest {
     private Guest guest1;
     private Guest guest2;
     private Guest guest3;
+    private Booking booking;
 
     @Before
     public void setUp() {
@@ -29,44 +30,45 @@ public class HotelTest {
         guest1 = new Guest("Ben", 2);
         guest2 = new Guest("Crawford", 1);
         guest3 = new Guest("Dave", 5);
+        booking = new Booking(4, bedroom1);
     }
 
     @Test
     public void checkInGuestToBedroom() {
-        Hotel.checkInGuestToBedroom(guest1, bedroom1);
+        hotel.checkInGuestToBedroom(guest1, bedroom1);
         assertEquals(1, bedroom1.guestCount());
     }
 
     @Test
     public void cantCheckInGuestToBedroom() {
-        Hotel.checkInGuestToBedroom(guest1, bedroom1);
-        Hotel.checkInGuestToBedroom(guest2, bedroom1);
+        hotel.checkInGuestToBedroom(guest1, bedroom1);
+        hotel.checkInGuestToBedroom(guest2, bedroom1);
         assertEquals(1, bedroom1.guestCount());
     }
 
     @Test
     public void checkInGuestToConferenceRoom() {
-        Hotel.checkInGuestToConferenceRoom(guest1, conferenceRoom1);
+        hotel.checkInGuestToConferenceRoom(guest1, conferenceRoom1);
         assertEquals(1, conferenceRoom1.guestCount());
     }
 
     @Test
     public void checkOutGuestFromConferenceRoom() {
-        Hotel.checkInGuestToConferenceRoom(guest1, conferenceRoom1);
-        Hotel.checkOutGuestFromConferenceRoom(conferenceRoom1);
+        hotel.checkInGuestToConferenceRoom(guest1, conferenceRoom1);
+        hotel.checkOutGuestFromConferenceRoom(conferenceRoom1);
         assertEquals(0, conferenceRoom1.guestCount());
     }
 
     @Test
     public void checkOutGuestFromBedroom() {
-        Hotel.checkInGuestToBedroom(guest1, bedroom1);
-        Hotel.checkOutGuestFromBedroom(bedroom1);
+        hotel.checkInGuestToBedroom(guest1, bedroom1);
+        hotel.checkOutGuestFromBedroom(bedroom1);
         assertEquals(0, bedroom1.guestCount());
     }
 
     @Test
     public void checkinChangesOccupied() {
-        Hotel.checkInGuestToBedroom(guest1, bedroom1);
+        hotel.checkInGuestToBedroom(guest1, bedroom1);
         assertEquals(true, bedroom1.setToOccupied() );
     }
 
@@ -78,7 +80,7 @@ public class HotelTest {
 
     @Test
     public void calculateTotalBillForBooking() {
-        
+        assertEquals(80.00, hotel.calculateTotalBill(booking), 0.01);
     }
 
 }

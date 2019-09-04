@@ -33,14 +33,17 @@ public class Hotel {
         bedroom.removeGuest();
     }
 
+    public double calculateTotalBill(Booking booking) {
+        return booking.getNumOfNights() * booking.getBedroom().getRatePerNight();
+    }
+
     public Booking bookRoom(int numOfNights, Bedroom bedroom) {
         //return Booking object
         Booking booking = new Booking(numOfNights, bedroom);
         bookingArrayList.add(booking);
+        this.calculateTotalBill(booking);
         return booking;
     }
-
-
 
 }
 
