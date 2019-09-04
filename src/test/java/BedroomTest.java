@@ -13,9 +13,9 @@ public class BedroomTest {
     @Before
     public void setUp() {
         bedroom = new Bedroom(1, 2, "double", false);
-        guest1 = new Guest("Ben");
-        guest2 = new Guest("Crawford");
-        guest3 = new Guest("Dave");
+        guest1 = new Guest("Ben", 2);
+        guest2 = new Guest("Crawford", 1);
+        guest3 = new Guest("Dave", 5);
     }
 
 

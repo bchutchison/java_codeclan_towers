@@ -13,9 +13,9 @@ public class ConferenceRoomTest {
     @Before
     public void setUp() {
         conferenceRoom = new ConferenceRoom(5, "The Mars Suite");
-        guest1 = new Guest("Ben");
-        guest2 = new Guest("Crawford");
-        guest3 = new Guest("Dave");
+        guest1 = new Guest("Ben", 2);
+        guest2 = new Guest("Crawford", 1);
+        guest3 = new Guest("Dave", 5);
     }
 
     @Test

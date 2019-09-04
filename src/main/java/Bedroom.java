@@ -56,4 +56,9 @@ public class Bedroom {
     public void removeGuest() {
         this.bedroomGuests.remove(0);
     }
+
+    public boolean setToOccupied() {
+        return this.occupied = true;
+
+    }
 }

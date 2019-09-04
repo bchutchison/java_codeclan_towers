@@ -15,6 +15,7 @@ public class Hotel {
 
     public static void checkInGuestToBedroom(Guest guest, Bedroom bedroom) {
         bedroom.addGuest(guest);
+        bedroom.setToOccupied();
     }
 
     public static void checkInGuestToConferenceRoom(Guest guest, ConferenceRoom conferenceRoom) {
