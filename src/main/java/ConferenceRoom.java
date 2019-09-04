@@ -36,4 +36,8 @@ public class ConferenceRoom {
     public int guestCount() {
         return this.conferenceRoomGuests.size();
     }
+
+    public void removeGuest() {
+        this.conferenceRoomGuests.remove(0); //should reference the index of the guest which is being passed in
+    }
 }

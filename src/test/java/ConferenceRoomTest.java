@@ -30,6 +30,13 @@ public class ConferenceRoomTest {
     }
 
     @Test
+    public void canRemoveGuest() {
+        conferenceRoom.addGuest(guest1);
+        conferenceRoom.removeGuest();
+        assertEquals(0, conferenceRoom.guestCount());
+    }
+
+    @Test
     public void doesNotAddGuest() {
         conferenceRoom.addGuest(guest1);
         conferenceRoom.addGuest(guest2);

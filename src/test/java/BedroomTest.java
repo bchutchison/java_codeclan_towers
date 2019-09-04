@@ -12,7 +12,7 @@ public class BedroomTest {
 
     @Before
     public void setUp() {
-        bedroom = new Bedroom(1, 2, "double");
+        bedroom = new Bedroom(1, 2, "double", false);
         guest1 = new Guest("Ben");
         guest2 = new Guest("Crawford");
         guest3 = new Guest("Dave");
@@ -28,6 +28,13 @@ public class BedroomTest {
     public void canAddGuest() {
         bedroom.addGuest(guest1);
         assertEquals(1, bedroom.guestCount());
+    }
+
+    @Test
+    public void canRemoveGuest() {
+        bedroom.addGuest(guest1);
+        bedroom.removeGuest();
+        assertEquals(0, bedroom.guestCount());
     }
 
     @Test
